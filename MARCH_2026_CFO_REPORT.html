@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>March 2026 CFO Report - KP Finance</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { 
+            text-align: center; 
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #0f3460 0%, #e94560 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.3);
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+        .header p { font-size: 1.2em; opacity: 0.9; }
+        .total-card {
+            background: linear-gradient(135deg, #e94560 0%, #0f3460 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(233, 69, 96, 0.4);
+        }
+        .total-amount { font-size: 3.5em; font-weight: bold; margin: 10px 0; }
+        .card-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            margin-bottom: 30px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { font-size: 1.5em; margin-bottom: 15px; color: #e94560; }
+        .card .amount { font-size: 2em; font-weight: bold; margin: 10px 0; }
+        .card .due { color: #ff6b6b; font-weight: bold; }
+        .chart-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .chart-container h3 { margin-bottom: 20px; font-size: 1.5em; color: #e94560; }
+        .insights {
+            background: rgba(233, 69, 96, 0.1);
+            border-left: 4px solid #e94560;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .insights h3 { color: #e94560; margin-bottom: 15px; font-size: 1.5em; }
+        .insight-item {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .insight-item:last-child { border-bottom: none; }
+        .insight-item strong { color: #e94560; }
+        .priority-list {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .priority-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid;
+        }
+        .priority-urgent { border-left-color: #ff4757; }
+        .priority-medium { border-left-color: #ffa502; }
+        .badge {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        .badge-urgent { background: #ff4757; }
+        .badge-medium { background: #ffa502; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .total-amount { font-size: 2.5em; }
+            .card .amount { font-size: 1.5em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 March 2026 CFO Report</h1>
+            <p>Complete Credit Card Spending Analysis</p>
+            <p style="margin-top: 10px; font-size: 0.9em; opacity: 0.8;">Generated: March 2, 2026 | 11:54 PM IST</p>
+        </div>
+
+        <div class="total-card">
+            <h2>Total Liability</h2>
+            <div class="total-amount">₹1,65,012</div>
+            <p>Across 3 Credit Cards</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>🛒 ICICI Amazon Pay</h3>
+                <div class="amount">₹30,366</div>
+                <p class="due">Due: March 8 (6 days)</p>
+                <p>Min Due: ₹1,570</p>
+                <p>Limit: ₹5.5L | Used: 5.5%</p>
+            </div>
+            <div class="card">
+                <h3>✈️ Scapia Federal</h3>
+                <div class="amount">₹1,01,221</div>
+                <p class="due">Due: March 10 (8 days)</p>
+                <p>Min Due: ₹10,253</p>
+                <p>Limit: ₹2.55L | Used: 39.7%</p>
+            </div>
+            <div class="card">
+                <h3>👑 Kotak Royale</h3>
+                <div class="amount">₹33,425</div>
+                <p class="due">Due: March 15 (13 days)</p>
+                <p>Min Due: ₹9,435</p>
+                <p>Limit: ₹3.64L | Used: 9.2%</p>
+            </div>
+        </div>
+
+        <div class="priority-list">
+            <h3 style="color: #e94560; margin-bottom: 20px;">🚨 Payment Priority</h3>
+            <div class="priority-item priority-urgent">
+                <div>
+                    <strong>ICICI Amazon Pay</strong>
+                    <p style="font-size: 0.9em; opacity: 0.8;">6 days remaining</p>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 1.5em; font-weight: bold;">₹30,366</div>
+                    <span class="badge badge-urgent">URGENT</span>
+                </div>
+            </div>
+            <div class="priority-item priority-urgent">
+                <div>
+                    <strong>Scapia Federal</strong>
+                    <p style="font-size: 0.9em; opacity: 0.8;">8 days remaining</p>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 1.5em; font-weight: bold;">₹1,01,221</div>
+                    <span class="badge badge-urgent">URGENT</span>
+                </div>
+            </div>
+            <div class="priority-item priority-medium">
+                <div>
+                    <strong>Kotak Royale Signature</strong>
+                    <p style="font-size: 0.9em; opacity: 0.8;">13 days remaining</p>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 1.5em; font-weight: bold;">₹33,425</div>
+                    <span class="badge badge-medium">MEDIUM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>📊 Spending by Card</h3>
+            <canvas id="cardChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>📈 Category Breakdown (All Cards)</h3>
+            <canvas id="categoryChart"></canvas>
+        </div>
+
+        <div class="insights">
+            <h3>💡 CFO Insights & Patterns</h3>
+            
+            <div class="insight-item">
+                <strong>🔥 Highest Single Transaction:</strong> Etihad Airways ₹77,022 (Scapia) - 46.7% of total spend!
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">International flight booking. Zero forex markup saved ~₹2,500 in fees.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>🍔 Food & Dining Pattern:</strong> ₹25,000+ across all cards
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">ICICI: 25+ Swiggy/Zomato orders (₹10K) | Kotak: The Park Club (₹14,980) | High-frequency delivery habit detected.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>✈️ Travel Dominance:</strong> ₹85,000+ (51.5% of total spend)
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Etihad (₹77K) + IRCTC (₹4.4K) + Bolt Estonia (₹5.8K). Scapia = Primary travel card.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>💻 Tech Subscriptions:</strong> ₹4,000+ recurring monthly
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">ChatGPT ($23.60), Netflix (₹649), Google Play (₹650), MyJio (₹899), X Corp (₹427). Consider annual plans for savings.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>⛽ Fuel Spending:</strong> ₹13,000+ across ICICI + Kotak
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Multiple fuel transactions. Check if reimbursable for business use.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>💰 Active Loans:</strong> ₹76,289 outstanding @ 14%
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Kotak Personal Loan: 9 months remaining, EMI ₹8,979/month. Consider prepayment if cash flow allows.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>🌍 International Spend:</strong> ₹85,000+ (51.5%)
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Estonia (Bolt), Singapore (Moonshot AI), USA (X Corp, Airhub), UAE (Etihad). Scapia zero-forex saving ~₹2,500-3,000.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>🎁 Rewards Summary:</strong> 1,086+ points/coins earned
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Scapia: 682 coins (travel) | Kotak: 404 points | ICICI: Points accrued. Redeem before expiry!</p>
+            </div>
+        </div>
+
+        <div class="insights">
+            <h3>🎯 CFO Recommendations</h3>
+            
+            <div class="insight-item">
+                <strong>1. Pay Scapia in Full by March 10</strong>
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">₹1,01,221 at 45% APR = ₹45,000+/year interest if revolving. Pay in full to avoid.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>2. Consolidate Food Spending</strong>
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">₹25K/month on food delivery. Consider meal prep or dining plans to reduce by 30-40% (save ₹7-10K/month).</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>3. Use Scapia for All International</strong>
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Zero forex markup saved ~₹2,500 this month. Make it your default for all foreign transactions.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>4. Prepay Kotak Loan If Possible</strong>
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">₹76K @ 14% = ₹10,640/year interest. Prepaying saves interest + improves credit score.</p>
+            </div>
+
+            <div class="insight-item">
+                <strong>5. Track Business vs Personal</strong>
+                <p style="margin-top: 5px; font-size: 0.9em; opacity: 0.8;">Fuel, The Park Club, IRCTC may be business expenses. Separate for tax deductions.</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>📅 Payment Timeline</h3>
+            <canvas id="timelineChart"></canvas>
+        </div>
+
+        <div style="text-align: center; padding: 40px 20px; opacity: 0.7; font-size: 0.9em;">
+            <p>Generated by Stitch (Cracked CFO) | OpenClaw Finance System</p>
+            <p style="margin-top: 10px;">All data sourced from bank statements | Last updated: March 2, 2026 11:54 PM IST</p>
+        </div>
+    </div>
+
+    <script>
+        // Card Spending Chart
+        const cardCtx = document.getElementById('cardChart').getContext('2d');
+        new Chart(cardCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['ICICI Amazon Pay', 'Scapia Federal', 'Kotak Royale'],
+                datasets: [{
+                    data: [30366, 101221, 33425],
+                    backgroundColor: ['#ff6b6b', '#4ecdc4', '#ffe66d'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom', labels: { color: '#fff', font: { size: 12 } } }
+                }
+            }
+        });
+
+        // Category Breakdown Chart
+        const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+        new Chart(categoryCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Travel', 'Food & Dining', 'Fuel', 'Tech/Subscription', 'Medical', 'Loan EMI', 'Other'],
+                datasets: [{
+                    label: 'Amount (₹)',
+                    data: [85000, 25000, 13000, 4000, 600, 9156, 28256],
+                    backgroundColor: ['#e94560', '#ff6b6b', '#ffa502', '#4ecdc4', '#26de81', '#a55eea', '#778ca3'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true, ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+                    x: { ticks: { color: '#fff' }, grid: { display: false } }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+        // Payment Timeline Chart
+        const timelineCtx = document.getElementById('timelineChart').getContext('2d');
+        new Chart(timelineCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mar 8', 'Mar 10', 'Mar 15'],
+                datasets: [{
+                    label: 'Payment Due (₹)',
+                    data: [30366, 101221, 33425],
+                    borderColor: '#e94560',
+                    backgroundColor: 'rgba(233, 69, 96, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: ['#ff4757', '#ff4757', '#ffa502'],
+                    pointRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true, ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+                    x: { ticks: { color: '#fff' }, grid: { display: false } }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
