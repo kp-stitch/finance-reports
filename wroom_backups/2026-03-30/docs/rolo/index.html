@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ROLO CEO Dashboard</title>
+  <style>
+    :root{--bg:#0b1020;--card:#121a33;--muted:#9fb0d1;--text:#e8eeff;--ok:#39d98a;--warn:#ffcc66;--risk:#ff6b6b;--accent:#7aa2ff}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#0a0f1f,#0b1020);color:var(--text)}
+    .wrap{max-width:980px;margin:auto;padding:16px}
+    .h1{font-size:28px;font-weight:800;margin:6px 0}.sub{color:var(--muted);font-size:14px;margin-bottom:14px}
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}.card{background:var(--card);border:1px solid #22305e;border-radius:14px;padding:14px}
+    .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.kpi{background:#0e1530;border:1px solid #22305e;border-radius:12px;padding:10px}
+    .kpi b{display:block;font-size:22px}.muted{color:var(--muted)} ul{margin:8px 0 0 18px;padding:0} li{margin:6px 0}
+    .tag{padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700}.ok{background:rgba(57,217,138,.15);color:var(--ok)}.warn{background:rgba(255,204,102,.16);color:var(--warn)}.risk{background:rgba(255,107,107,.15);color:var(--risk)}
+    table{width:100%;border-collapse:collapse;font-size:14px} th,td{border-bottom:1px solid #26396f;padding:10px 8px;text-align:left;vertical-align:top}
+    th{color:#b8c8ee;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+    .directive{background:#0e1836;border-left:4px solid var(--accent);padding:12px;border-radius:8px}
+    @media(min-width:860px){.grid{grid-template-columns:1fr 1fr}.full{grid-column:1/-1}.kpis{grid-template-columns:repeat(4,1fr)}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="h1">ROLO CEO Dashboard</div>
+    <div class="sub">Owner: KP • Snapshot Date: 2026-03-03 • Mobile-first review board</div>
+
+    <div class="card full">
+      <div class="kpis">
+        <div class="kpi"><span class="muted">Milestone</span><b>Scene 1 → Title Card</b><span class="tag ok">R&D Locked</span></div>
+        <div class="kpi"><span class="muted">Primary Risk</span><b>Execution Drift</b><span class="tag risk">High</span></div>
+        <div class="kpi"><span class="muted">Hiring Funnel</span><b>400 Outreach</b><span class="tag warn">Finalize</span></div>
+        <div class="kpi"><span class="muted">Focus</span><b>Freeze + Closure</b><span class="tag ok">This Week</span></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Executive Summary</h3>
+        <ul>
+          <li>Team moved from concept chaos to structured R&D.</li>
+          <li>Opening segment R&D is fixed and completed.</li>
+          <li>Now bottleneck is closure discipline and sign-off speed.</li>
+          <li>Need one owner board to prevent review-loop churn.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>CEO Critical Risks</h3>
+        <ol>
+          <li>Decision churn without freeze dates.</li>
+          <li>Ownership blur across review authorities.</li>
+          <li>Candidate finalization lag.</li>
+          <li>Edit debt (timing/flow still not locked).</li>
+          <li>Documentation spread across formats.</li>
+        </ol>
+      </div>
+
+      <div class="card full">
+        <h3>Accountability Tracker</h3>
+        <table>
+          <thead><tr><th>Area</th><th>Owner</th><th>Status</th><th>Deadline</th><th>Blocker</th></tr></thead>
+          <tbody>
+            <tr><td>Scene 1 timing/flow final pass</td><td>Naresh + Venkat</td><td><span class="tag warn">In Progress</span></td><td>2026-03-05</td><td>Iteration churn</td></tr>
+            <tr><td>First-half visual bible v1</td><td>Mullai + Gautham</td><td><span class="tag warn">In Progress</span></td><td>2026-03-05</td><td>Ref consistency</td></tr>
+            <tr><td>Candidate shortlist finalization</td><td>Team + Pradeep</td><td><span class="tag risk">Pending</span></td><td>2026-03-04</td><td>Response delays</td></tr>
+            <tr><td>Forest map correction pass</td><td>Mullai</td><td><span class="tag warn">Pending Corrections</span></td><td>2026-03-04</td><td>Feedback incorporation</td></tr>
+            <tr><td>Giant Wheel integration</td><td>Gautham</td><td><span class="tag ok">Approved</span></td><td>2026-03-04</td><td>Shot mapping</td></tr>
+            <tr><td>Name Board integration</td><td>Venkat</td><td><span class="tag ok">Approved</span></td><td>2026-03-04</td><td>Placement decisions</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card full">
+        <h3>Team Directive (post this tomorrow)</h3>
+        <div class="directive">Good progress. From today, we run one execution board only. Every EOD update must include: (1) what was shipped, (2) what is blocked, (3) what will be closed tomorrow. No generic updates. Scene ownership and freeze dates are mandatory.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

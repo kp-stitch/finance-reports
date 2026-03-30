@@ -1,0 +1,17 @@
+date,account_type,account_name,transaction_type,amount_inr,category,description,status,reference_document
+2026-03-02,CREDIT_CARD,ICICI_AMAZON_PAY,TOTAL_DUE,30366.37,CREDIT_CARD,ICICI Amazon Pay CC due Mar 8 2026,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/ICICI_AmazonPay_Feb2026.pdf
+2026-03-02,CREDIT_CARD,SCAPIA_FEDERAL,TOTAL_DUE,101221.15,CREDIT_CARD,Scapia Federal CC due Mar 10 2026,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Scapia_Feb2026.pdf
+2026-03-02,CREDIT_CARD,KOTAK_ROYALE,TOTAL_DUE,33424.53,CREDIT_CARD,Kotak Royale Signature CC due Mar 15 2026,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Kotak_Royale_Feb2026.pdf
+2026-03-02,CREDIT_CARD,KOTAK_ROYALE,MINIMUM_DUE,9434.99,CREDIT_CARD,Kotak minimum due,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Kotak_Royale_Feb2026.pdf
+2026-02-15,CREDIT_CARD,KOTAK_ROYALE,PAYMENT_RECEIVED,-21003.70,PAYMENT,Payment received Feb 15,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Kotak_Royale_Feb2026.pdf
+2026-02-08,CREDIT_CARD,SCAPIA_FEDERAL,PAYMENT_RECEIVED,-118026.93,PAYMENT,Full payment received Feb 8,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Scapia_Feb2026.pdf
+2026-02-13,CREDIT_CARD,SCAPIA_FEDERAL,ETIHAD_AIRWAYS,77021.92,TRAVEL,Largest transaction Feb 2026,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Scapia_Feb2026.pdf
+2026-02-17,CREDIT_CARD,SCAPIA_FEDERAL,IRCTC,4438.51,TRAVEL,Train booking,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Scapia_Feb2026.pdf
+2026-01-20,CREDIT_CARD,SCAPIA_FEDERAL,MOONSHOT_AI_SG,1729.38,TECH,Singapore subscription,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Scapia_Feb2026.pdf
+2026-02-15,KOTAK_ROYALE,THE_PARK_CLUB,RESTAURANT,14980.00,FOOD,Largest transaction Feb 2026,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Kotak_Royale_Feb2026.pdf
+2026-02-13,KOTAK_ROYALE,PATTABIRAMARAJA_SURAJ,FUEL,4441.19,TRANSPORT,Fuel purchase,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Kotak_Royale_Feb2026.pdf
+2026-01-27,KOTAK_ROYALE,VARUN_PRASAD_R,FUEL,4335.41,TRANSPORT,Fuel purchase,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Kotak_Royale_Feb2026.pdf
+2026-02-10,KOTAK_ROYALE,MEHTA_MULTISPECIALITY,MEDICAL,600.00,HEALTH,Medical expense,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Kotak_Royale_Feb2026.pdf
+2025-11-29,PERSONAL_LOAN,KOTAK_PL,LOAN_SANCTION,100000.00,LOAN,Personal loan 14% 12 months,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Kotak_Royale_Feb2026.pdf
+2026-03-02,PERSONAL_LOAN,KOTAK_PL,OUTSTANDING_PRINCIPAL,76289.40,LOAN,9 months remaining,confirmed,/Users/pkamal/Documents/Finance/Statements/Credit_Cards/2026/Feb/Kotak_Royale_Feb2026.pdf
+2026-03-02,SUMMARY,MARCH_2026_TOTAL,TOTAL_LIABILITY,165012.05,SUMMARY,All CC dues March 2026,confirmed,consolidated
