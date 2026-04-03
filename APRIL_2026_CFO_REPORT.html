@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>April 2026 CFO Report</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body{font-family:Inter,system-ui;background:#0b1020;color:#e6ebff;margin:0;padding:20px}
+    .wrap{max-width:1100px;margin:0 auto}
+    .card{background:#121a33;border:1px solid #233059;border-radius:14px;padding:16px;margin-bottom:14px}
+    .kpi{font-size:38px;font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .danger{color:#ff6b6b}.warn{color:#ffb84d}.ok{color:#74e291}
+    table{width:100%;border-collapse:collapse} td,th{padding:8px;border-bottom:1px solid #24345f;text-align:left}
+    h1,h2{margin:8px 0}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>📊 CFO Monthly Analysis — April 2026</h1>
+    <div>Generated: 2026-04-03 | Source: Gmail statements + PdfReader extraction</div>
+  </div>
+
+  <div class="card">
+    <div>Total Liability (Current Card Dues)</div>
+    <div class="kpi">₹1,12,202.65</div>
+    <div class="warn">High pressure window: 05-Apr to 12-Apr</div>
+  </div>
+
+  <div class="grid">
+    <div class="card"><h2>ICICI Amazon Pay</h2><div>Total Due: ₹44,900.18</div><div>Min Due: ₹2,300.00</div><div class="danger">Due: 05-Apr-2026</div></div>
+    <div class="card"><h2>Scapia Federal</h2><div>Total Due: ₹49,968.80</div><div>Min Due: ₹7,672.32</div><div class="warn">Due: 07-Apr-2026</div></div>
+    <div class="card"><h2>Kotak Royale</h2><div>Total Due: ₹17,333.67</div><div>Min Due: ₹8,703.11</div><div class="ok">Due: 12-Apr-2026</div></div>
+  </div>
+
+  <div class="card">
+    <h2>Payment Priority Queue</h2>
+    <table>
+      <tr><th>Priority</th><th>Card</th><th>Total Due</th><th>Due Date</th><th>Action</th></tr>
+      <tr><td>1</td><td>ICICI Amazon Pay</td><td>₹44,900.18</td><td>05-Apr</td><td>Pay full by 04-Apr</td></tr>
+      <tr><td>2</td><td>Scapia Federal</td><td>₹49,968.80</td><td>07-Apr</td><td>Pay full by 06-Apr</td></tr>
+      <tr><td>3</td><td>Kotak Royale</td><td>₹17,333.67</td><td>12-Apr</td><td>Pay full by 10-Apr</td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="card"><canvas id="cardSpend"></canvas></div>
+    <div class="card"><canvas id="paymentTimeline"></canvas></div>
+  </div>
+
+  <div class="card">
+    <h2>Pattern Analysis</h2>
+    <ul>
+      <li>Card dues are concentrated: Scapia + ICICI account for 84.6% of liabilities.</li>
+      <li>Total minimum dues are ₹18,675.43; full payment avoids interest drag.</li>
+      <li>Kotak statement shows active EMI principal outstanding (₹68,200.74) — leverage risk is still elevated.</li>
+      <li>ICICI minimum due is only 5.1% of total, so revolver trap risk is high if only minimum is paid.</li>
+      <li>Scapia statement PDF is password-protected; due figures were verified from statement email and attachment metadata.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>CFO Recommendations</h2>
+    <ol>
+      <li>Clear ICICI + Scapia in full this week; do not roll either card.</li>
+      <li>Keep Kotak paid in full before 10-Apr to avoid late fee repeat.</li>
+      <li>Freeze discretionary card spending until Apr due stack is closed.</li>
+      <li>Track daily liquidity against fixed-cost schedule in APRIL_2026_FIXED_COSTS.md.</li>
+      <li>Run follow-up mini-recon on 13-Apr for post-due cash position.</li>
+    </ol>
+  </div>
+</div>
+<script>
+new Chart(document.getElementById('cardSpend'),{type:'doughnut',data:{labels:['ICICI','Scapia','Kotak'],datasets:[{data:[44900.18,49968.80,17333.67],backgroundColor:['#4dc9f6','#ff9f40','#9966ff']}]} });
+new Chart(document.getElementById('paymentTimeline'),{type:'line',data:{labels:['05-Apr','07-Apr','12-Apr'],datasets:[{label:'Amount Due',data:[44900.18,49968.80,17333.67],borderColor:'#74e291',fill:false}]}});
+</script>
+</body>
+</html>
